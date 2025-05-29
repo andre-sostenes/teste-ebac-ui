@@ -42,4 +42,8 @@ describe('Funcionalidade: Login',() => {
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, andre.teste (não é andre.teste? Sair)')
         })
     })
+    it.only('Deve fazer login com sucesso - Usando Comando Customizado', () => {
+        cy.login(perfil.usuario, perfil.senha)
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, andre.teste (não é andre.teste? Sair)')
+    })
 })
